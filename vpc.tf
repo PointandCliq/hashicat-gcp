@@ -2,7 +2,7 @@ module "vpc" {
     source  = "terraform-google-modules/network/google"
     version = "~> 3.4"
 
-    project_id   = "var.project"
+    project_id   = var.project
     network_name = "tomp-vpc"
     routing_mode = "GLOBAL"
 
@@ -10,7 +10,7 @@ module "vpc" {
         {
             subnet_name           = "tomp-subnet"
             subnet_ip             = "10.10.10.0/24"
-            subnet_region         = "var.region"
+            subnet_region         = var.region
         }
     ]
 
